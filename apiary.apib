@@ -1,0 +1,41 @@
+HOST: https://api.access.redhat.com/rs
+
+--- Strata ---
+---
+Strata is the Red Hat [Customer Portal](https://access.redhat.com) API for subscribers and integrators.
+---
+--
+Support Resources
+These resources allow interaction with our support infrastructure.
+--
+List support cases
+GET /cases
+< 200
+< Content-Type: application/json
+{ "case": [
+  { "id": "12345", "descrption":"Cannot upgrade to RHEV 3.1", "status":"NEW" }
+] }
+
+Create a new support case
+POST /cases
+> Content-Type: application/json
+{ "product":"1AB23ORM", "quantity": 2 }
+< 201
+< Content-Type: application/json
+< Location: "how do I specify this?"
+{ "status": "created", "url": "/shopping-cart/2" }
+
+
+-- Content Resources --
+These resources related to various managed content types.
+--
+List Knowledge articles
+GET /articles
+< 200
+< Content-Type: applicatoin/xml
+<articles>
+    <article>
+        <title>How to use Strata</title>
+        <text>Strata is awesome! Consider integrating with us.</text>
+    </article>
+</articles>
