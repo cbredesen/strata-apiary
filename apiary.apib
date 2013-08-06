@@ -32,10 +32,21 @@ These resources related to various managed content types.
 List Knowledge articles
 GET /articles
 < 200
-< Content-Type: applicatoin/xml
+< Content-Type: application/xml
 <articles>
     <article>
         <title>How to use Strata</title>
         <text>Strata is awesome! Consider integrating with us.</text>
     </article>
 </articles>
+
+List users on your account
+GET /beta/users
+< 200
+< Content-Type: application/xml
+<users>
+    <user>
+        <id>12345</id>
+        <link rel="detail" href="12345" />
+    </user>
+</users>
